@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Great Vibes', cursive;
+}
+
+.slider{
+height: 100vh;
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+background: linear-gradient( to left, #333, #d1a984);
+z-index: -1;
+}
+nav{
+display: grid;
+grid-template-columns: 10% 1fr 1fr 10%;
+min-height: 10vh;
+align-items: center;
+margin-top: 1em;
+}
+.logo{
+grid-column: 2/3;
+font-weight: 300;
+word-spacing: 2px;
+font-size: 30px;
+font-family: 'Poiret One', cursive;
+color: #e0d3ff;
+border: 1px solid  #e0d3ff;;
+justify-self: start;
+padding:  .2em;
+}
+.hamburger{
+justify-self: end;
+filter: invert(1);
+width: 50px;
+background: url(./Images/align-right.svg);
+background-size: cover;
+background-position: center;
+height: 50px;
+cursor: pointer;
+}
+
+section{
+display: flex;
+justify-content: center;
+align-items: center;
+height: 80vh;
+}
+.hero{
+height: 80%;
+width: 100%;
+position: relative;
+}
+.hero img{
+height: 100%;
+width: 100%;
+object-fit: cover;
+
+}
+.headline{
+color: #e0d3ff;
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%,-50%);
+font-size: 50px;
+z-index: 3;
+font-weight: 100;
+word-spacing: 2px;
+
+
+}
+
+.hero::after{
+content: '';
+background: black;
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+width: 100%;
+opacity: .5;
+}
+
+.navigation{
+    position: absolute;
+    height: 100vh;
+    width: 350px;
+    background: #e0d3ff;
+    top: 0;
+    left: -350px;
+    /* z-index: -1; */
+    display: flex;
+    justify-content: center;
+    align-items:baseline;
+    padding: .7em .2em;
+    transition: 450ms ease;
+}
+.navigation li{
+    list-style: none;
+    margin: 1.72em 0;
+}
+.navigation a{
+    text-decoration: none;
+    color: hsl(212, 15%,24%);
+    font-size: 1em;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.navigation a:hover{
+    color: black;
+}
+.navigation.active{
+    left: 0;
+    z-index: 11;
+}
+.hamburger.active{
+    background: url(./Images/icon-close.svg);
+    background-size: cover;
+    background-position: center;
+    height: 35px;
+    width: 40px;
+}
+
+@media (max-width:700px) {
+.headline{
+font-size: 40px;
+line-height: 1.6;
+}
+.navigation{
+    width: 200px;
+}
+.logo{
+    font-size: 1.7em;
+}
+}
+
